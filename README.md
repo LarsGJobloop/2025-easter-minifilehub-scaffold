@@ -10,7 +10,7 @@ This project is designed as a short, hands-on backend engineering challenge. Ove
 
 | Component   | Technology        | Purpose                           |
 |-------------|-------------------|-----------------------------------|
-| Ingress     | Traefik           | Reverse proxy & service routing  |
+| Ingress     | Traefik           | Reverse proxy & service routing   |
 | Backend API | ASP.NET Core      | File upload, listing, deletion    |
 | Database    | PostgreSQL        | File metadata & logs              |
 | Storage     | MinIO (S3 API)    | Actual file content               |
@@ -75,7 +75,7 @@ docker compose up --build
 - Where would you add logging in a production system?
 - How might authentication or RBAC be layered onto this architecture?
 
-🌱 Bonus Ideas
+## 🌱 Bonus Ideas
 
 - Add file tagging or versioning.
 - Implement basic auth or TLS for Traefik.
