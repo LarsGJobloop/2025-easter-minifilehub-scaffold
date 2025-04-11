@@ -89,3 +89,7 @@ docker compose up --build
 - Functional HTTP API with upload/list/delete
 - Metadata persisted in Postgres, files stored in MinIO
 - Code hosted in a public or shared Git repository
+
+## 😵‍💫 Confused
+
+Create an issue using the GitHub issue tracker and we will get to you as soon as possible. Weekdays, mostly 8-16 (GMT+1).
