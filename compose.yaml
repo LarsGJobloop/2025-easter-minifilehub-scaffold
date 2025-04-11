@@ -1,0 +1,61 @@
+services:
+  gateway:
+    image: traefik:v2.10
+    ports:
+      - "80:80"
+      - "9001:8080"
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  file-service:
+    build: ./services/file-service
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`file-service.localhost`)"
+      - "traefik.http.services.backend.loadbalancer.server.port=8080"
+    # Pass in connection information as Environment Variables
+    # environment:
+      # - PostgreSQL Connection Info
+      # - MinIO Connection Info
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: filesdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  object-storage:
+    image: minio/minio
+    command: server /data --console-address ":9002"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"
+      - "9002:9002"
+    volumes:
+      - miniodata:/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "9003:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@mail.com
+      PGADMIN_DEFAULT_PASSWORD: postgresql
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+
+volumes:
+  pgdata:
+  miniodata:
+  pgadmin:
