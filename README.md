@@ -34,10 +34,12 @@ By completing this project, you will:
 ### 1. Clone the repo
 
 ```sh
-git clone https://github.com/your-org/minifilehub.git
+git clone https://github.com/LarsGJobloop/2025-easter-minifilehub-scaffold minifilehub
 cd minifilehub
 ```
+
 ### 2. Spin up the stack
+
 ```bash
 docker-compose up --build
 ```
