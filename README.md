@@ -68,7 +68,7 @@ docker-compose up --build
 
 ⚠️ Make sure uploaded files go to MinIO, and their metadata (filename, size, date, optional tags) is stored in PostgreSQL.
 
-## 🧠 Reflective Prompts (Optional)
+## 🧠 Reflective Prompts
 
 - What happens if the DB insert succeeds but the MinIO upload fails?
 - How might you ensure consistency across these systems?
