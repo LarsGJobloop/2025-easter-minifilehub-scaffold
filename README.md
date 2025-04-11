@@ -15,6 +15,17 @@ This project is designed as a short, hands-on backend engineering challenge. Ove
 | Database    | PostgreSQL        | File metadata & logs              |
 | Storage     | MinIO (S3 API)    | Actual file content               |
 
+### Tooling
+
+#### Required
+
+- Container Runtime with compose support [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [.NET SDK 9.0](https://dotnet.microsoft.com/en-us/download)
+
+#### Handy
+
+- Development Environment [Nix](https://nixos.org/)
+
 ---
 
 ## 🎯 Project Goals
