@@ -2,7 +2,7 @@
 
 A simple, containerized file management system for backend developers.
 
-This project is designed as a short, hands-on backend engineering challenge. Over the course of 2–3 days, you’ll set up a multi-service system using Docker Compose, implement file management logic in ASP.NET, and integrate storage with PostgreSQL and MinIO.
+This project is designed as a short, hands-on backend engineering challenge. Over the course of the easter, you’ll set up a multi-service system using Docker Compose, implement file management logic in ASP.NET, and integrate storage with PostgreSQL and MinIO.
 
 ---
 
